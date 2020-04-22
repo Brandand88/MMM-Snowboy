@@ -15,7 +15,9 @@ To install and update MMM-Snowboy module, you can use automatic scripts.
 For automatic installation run this command and execute electron rebuild step:
   
 ```sh
-cd ~/MagicMirror/modules/MMM-Snowboy
+cd ~/MagicMirror/modules/
+git clone https://github.com/bugsounet/MMM-Snowboy
+cd MMM-Snowboy
 npm install
 ```
 
@@ -25,7 +27,9 @@ MMM-Snowboy need some libraries
 
 ```sh
 sudo apt-get install libmagic-dev libatlas-base-dev sox libsox-fmt-all build-essential
-cd ~/MagicMirror/modules/MMM-Snowboy
+cd ~/MagicMirror/modules/
+git clone https://github.com/bugsounet/MMM-Snowboy
+cd MMM-Snowboy
 npm install
 ```
 Don't execute automatic installation
