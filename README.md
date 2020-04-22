@@ -66,6 +66,7 @@ npm run rebuild
 
 **2020/04/22**: v1.1.1
   * Fix: Cleaning old library (not needed)
+  
 **2020/04/21**: v1.1.0
   * ADD: use npm [@bugsounet/snowboy](https://github.com/bugsounet/snowboy) library
   * FIX: new Code for this library
