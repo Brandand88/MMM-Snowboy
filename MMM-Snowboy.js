@@ -16,11 +16,12 @@ Module.register("MMM-Snowboy", {
       device: "plughw:1"
     },
     onDetected: {
-      notification: "ASSISTANT_ACTIVATE",
+      notification: "SHOW_ALERT",
       parameters: {
-        type: "MIC",
-        profile: "default",
-        chime: true
+        type: "notification",
+        message: "Detected !",
+        title: "MMM-Snowboy",
+        timer: 10 * 1000
        }
     }
   },
@@ -32,12 +33,9 @@ Module.register("MMM-Snowboy", {
 
   notificationReceived: function(notification, payload, sender) {
     switch (notification) {
-      case "ASSISTANT_READY":
-      case "A2D_AMK2_READY":
       case "SNOWBOY_START":
         this.sendSocketNotification('START')
         break
-      case "A2D_AMK2_BUSY":
       case "SNOWBOY_STOP":
         this.sendSocketNotification('STOP')
         break

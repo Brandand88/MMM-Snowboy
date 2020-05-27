@@ -64,6 +64,9 @@ npm run rebuild
 ```
 ## Update
 
+**2020/05/27**: v1.2.0
+  * Fix: Sample default notification
+
 **2020/04/22**: v1.1.1
   * Fix: Cleaning old library (not needed)
   
@@ -106,11 +109,12 @@ this is the default configuration defined if you don't define any value
       device: "plughw:1"
     },
     onDetected: {
-      notification: "ASSISTANT_ACTIVATE",
+      notification: "SHOW_ALERT",
       parameters: {
-        type: "MIC",
-        profile: "default",
-        chime: true
+        type: "notification",
+        message: "Detected !",
+        title: "MMM-Snowboy",
+        timer: 10 * 1000
        }
     }
   }
@@ -149,22 +153,18 @@ this is the default configuration defined if you don't define any value
 - `device` - recording device (microphone) name of your environment. (e.g. "plughw:1")
     * Find proper device name by yourself. (arecord -l will be help on Raspberry Pi)
 
-- `notification` - notification name to emit when the hotword is detected. [Preconfigured for AMk2 activation.]
+- `notification` - notification name to emit when the hotword is detected.
 
-- `parameters` - payload to send with your notification. [Preconfigured for AMk2 activation].
+- `parameters` - payload to send with your notification.
 
  ### Notification received
  MMM-Snowboy can receive notification for start or stop listening
-  * `SNOWBOY_START`: Start listening your prefered hotkey
+  * `SNOWBOY_START`: Start listening with your prefered hotkey
   * `SNOWBOY_STOP`: Stop Litening
   
  ### Notes
   * this module don't need position, because it don't use any visual
   * With npm install, you can generate a proper micConfig {} configuration.
-  
- ### MMM-AssistantMk2 users
-  * MMM-Snowboy is preconfigured for this module
-  * Just turn `useA2D: true` on the MMM-AssistantMk2 config file
   
  ### Snowboy
  This module use my personal [@bugsounet/snowboy](https://github.com/bugsounet/snowboy) library build for node and will be maintened<br>
